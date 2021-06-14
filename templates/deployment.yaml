@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+
+  # {{ if .Values.applications.namespace }}
+  # namespace: {{ .Values.applications.namespace }}
+  # {{ end }}
+
+  name: {{ .Values.applications.nginx.name }}-deployment
+  labels:
+    app: {{ .Values.applications.nginx.name }}
+spec:
+  replicas: {{ .Values.applications.nginx.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.applications.nginx.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.applications.nginx.name }}
+    spec:
+      containers:
+        - name: {{ .Values.applications.nginx.name }}
+          image: {{ .Values.applications.nginx.image.name }}:{{ .Values.applications.nginx.image.version }}
+          ports:
+            - containerPort: {{ .Values.applications.nginx.ports.http }}
+          env:
+            - name: DEPLOY_TIME_STAMP
+              value: {{ now | quote }}
+          volumeMounts:
+            - name: html
+              mountPath: /usr/share/nginx/html              
+      volumes:
+        - name: html
+          configMap:
+            name: html-configmap

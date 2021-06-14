@@ -1,0 +1,78 @@
+
+  questions:
+  - variable: nginxDefaultValues
+    default: "true"
+    description: "Use default values"
+    type: boolean
+    required: true
+    label: Use default values for nginx
+    show_subquestion_if: false
+    group: "Nginx reverse proxy"
+    subquestions:
+    - variable: applications.nginx.name
+      default: "nginx"
+      description: "Application Name"
+      type: string
+      label: Application Name
+    - variable: applications.nginx.replicas
+      default: 1
+      description: "How many replicas do you want to deploy"
+      type: int
+      label: Replicas
+    - variable: applications.nginx.image.name
+      default: "nginx"
+      description: "Docker image url to deploy"
+      type: string
+      label: Image
+    - variable: applications.nginx.image.version
+      default: "latest"
+      description: "Image tag version to deploy"
+      type: string
+      label: Tag
+    - variable: applications.nginx.ports.http
+      default: 80
+      description: "Http proxy port"
+      type: int
+      label: Http port
+
+  - variable: servicesDefaultValues
+    default: "true"
+    description: "Use default values for services"
+    type: boolean
+    required: true
+    label: Use default values for services
+    show_subquestion_if: false
+    group: "Services"
+    subquestions:
+    - variable: services.nginx.name
+      default: "nginx"
+      description: "Nginx Service Name"
+      type: string
+      label: Nginx service name
+    - variable: services.nginx.type
+      default: "NodePort"
+      description: "Service Type"
+      type: enum
+      options:
+        - "NodePort"
+        - "ClusterIp"
+        - "LoadBalancer"
+      label: Service Type
+    - variable: services.nginx.http.protocol
+      default: "TCP"
+      description: "Service Protocol for http"
+      type: enum
+      options:
+        - "TCP"
+        - "http"
+      label: Service Protocol for http
+    - variable: services.nginx.http.container-port
+      default: 80
+      description: "Http Nginx Service container port"
+      type: int
+      label: Http Nginx Service container port
+    - variable: services.nginx.http.service-port
+      default: 33000
+      description: "Http Nginx Service port"
+      type: int
+      label: Http Nginx Service port

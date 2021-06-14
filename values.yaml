@@ -1,0 +1,18 @@
+applications:
+  nginx:
+    name: nginx
+    replicas: 1
+    image:
+      name: nginx
+      version: latest
+    ports:
+      http: 80
+
+services:
+  nginx:
+    name: nginx
+    type: NodePort
+    http:
+      protocol: tcp
+      container-port: 80
+      service-port: 80 
