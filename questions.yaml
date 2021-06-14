@@ -66,12 +66,12 @@
         - "TCP"
         - "http"
       label: Service Protocol for http
-    - variable: services.nginx.http.container-port
+    - variable: services.nginx.http.container_port
       default: 80
       description: "Http Nginx Service container port"
       type: int
       label: Http Nginx Service container port
-    - variable: services.nginx.http.service-port
+    - variable: services.nginx.http.service_port
       default: 33000
       description: "Http Nginx Service port"
       type: int

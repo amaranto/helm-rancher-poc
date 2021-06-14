@@ -14,5 +14,5 @@ services:
     type: NodePort
     http:
       protocol: tcp
-      container-port: 80
-      service-port: 80 
+      container_port: 80
+      service_port: 80 
