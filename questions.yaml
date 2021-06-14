@@ -72,7 +72,7 @@
       type: int
       label: Http Nginx Service container port
     - variable: services.nginx.http.service_port
-      default: 33000
+      default: 80
       description: "Http Nginx Service port"
       type: int
       label: Http Nginx Service port
