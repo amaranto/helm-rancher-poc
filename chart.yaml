@@ -1,0 +1,17 @@
+  
+name: helm-poc
+version: 1.0.0
+appVersion: 1.0.0
+description: Rancher catalog POC
+keywords:
+- helm
+- rancher
+- poc
+- mwl
+home: hhttps://github.com/amaranto/helm-rancher-poc/blob/main/README.md
+icon: https://cdn.evbuc.com/eventlogos/90565841/rancherlogofinal.png
+sources:
+- hhttps://github.com/amaranto/helm-rancher-poc/blob/main/README.md
+maintainers:
+- name: earevalo
+  email: eze.m.arevalo@gmail.com
