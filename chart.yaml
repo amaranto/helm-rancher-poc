@@ -10,8 +10,6 @@ keywords:
 - mwl
 home: hhttps://github.com/amaranto/helm-rancher-poc/blob/main/README.md
 icon: https://cdn.evbuc.com/eventlogos/90565841/rancherlogofinal.png
-sources:
-- hhttps://github.com/amaranto/helm-rancher-poc/blob/main/README.md
 maintainers:
 - name: earevalo
   email: eze.m.arevalo@gmail.com
